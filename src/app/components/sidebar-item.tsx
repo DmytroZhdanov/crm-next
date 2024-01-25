@@ -1,4 +1,4 @@
-import React from "react";
+import { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
@@ -8,7 +8,7 @@ export interface SidebarItemProps {
   pathname: string;
   src: string;
   alt: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function SidebarItem({
@@ -17,7 +17,7 @@ export default function SidebarItem({
   src,
   alt,
   children,
-}: SidebarItemProps) {
+}: Readonly<SidebarItemProps>) {
   return (
     <li>
       <Link
@@ -29,6 +29,7 @@ export default function SidebarItem({
         )}
       >
         <Image className="ml-5" width={18} height={18} src={src} alt={alt} />
+
         <span className="font-medium text-zinc-50">{children}</span>
       </Link>
     </li>

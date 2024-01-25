@@ -1,15 +1,15 @@
-import React from "react";
+import { InputHTMLAttributes, MouseEventHandler } from "react";
 import Image from "next/image";
 
 export interface SearchInputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
-  onSearchClick?: React.MouseEventHandler<HTMLButtonElement>;
+  extends InputHTMLAttributes<HTMLInputElement> {
+  onSearchClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export default function SearchInput({
   onSearchClick,
   ...rest
-}: SearchInputProps) {
+}: Readonly<SearchInputProps>) {
   return (
     <div className="relative w-96">
       <input
@@ -17,6 +17,7 @@ export default function SearchInput({
         type="text"
         className="text-sm flex-1 py-3 pl-3 pr-11 w-full h-11 rounded border border-gray-300 bg-gray-50"
       />
+
       <button
         type="button"
         className="absolute top-0	right-0 p-3"

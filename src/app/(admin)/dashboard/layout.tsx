@@ -1,12 +1,12 @@
-import React from "react";
+import { ReactNode } from "react";
 
 export interface LayoutProps {
-  children: React.ReactNode;
-  stats: React.ReactNode;
-  sales: React.ReactNode;
-  categories: React.ReactNode;
-  countries: React.ReactNode;
-  promotions: React.ReactNode;
+  children: ReactNode;
+  stats: ReactNode;
+  sales: ReactNode;
+  categories: ReactNode;
+  countries: ReactNode;
+  promotions: ReactNode;
 }
 
 export default function Layout({
@@ -16,7 +16,7 @@ export default function Layout({
   categories,
   countries,
   promotions,
-}: LayoutProps) {
+}: Readonly<LayoutProps>) {
   return (
     <div>
       {children}

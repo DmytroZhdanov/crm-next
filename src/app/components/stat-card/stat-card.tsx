@@ -1,4 +1,3 @@
-import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 
@@ -13,7 +12,11 @@ export interface StatCardProps {
   counter: number;
 }
 
-export default function StatCard({ type, label, counter }: StatCardProps) {
+export default function StatCard({
+  type,
+  label,
+  counter,
+}: Readonly<StatCardProps>) {
   return (
     <div
       className={clsx(
@@ -37,6 +40,7 @@ export default function StatCard({ type, label, counter }: StatCardProps) {
       >
         {label}
       </p>
+
       <p className="text-6xl font-semibold">{counter}</p>
     </div>
   );

@@ -1,15 +1,15 @@
-import React from "react";
+import { ReactNode } from "react";
 import clsx from "clsx";
 
 export interface SummaryTableHeaderProps {
   align?: "left" | "center" | "right";
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function SummaryTableHeader({
   align = "left",
   children,
-}: SummaryTableHeaderProps) {
+}: Readonly<SummaryTableHeaderProps>) {
   return (
     <th
       className={clsx(

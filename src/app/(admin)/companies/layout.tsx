@@ -1,10 +1,10 @@
-import React from "react";
+import { ReactNode } from "react";
 
 export interface LayoutProps {
-  children: React.ReactNode;
-  header: React.ReactNode;
-  toolbar: React.ReactNode;
-  modal: React.ReactNode;
+  children: ReactNode;
+  header: ReactNode;
+  toolbar: ReactNode;
+  modal: ReactNode;
 }
 
 export default function Layout({
@@ -12,7 +12,7 @@ export default function Layout({
   header,
   toolbar,
   modal,
-}: LayoutProps) {
+}: Readonly<LayoutProps>) {
   return (
     <>
       {modal}

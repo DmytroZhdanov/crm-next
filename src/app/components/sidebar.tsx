@@ -1,13 +1,11 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
-import SidebarItem from "@/app/components/sidebar-item";
 import { usePathname, useRouter } from "next/navigation";
 
-export interface SidebarProps {}
+import SidebarItem from "@/app/components/sidebar-item";
 
-export default function Sidebar({}: SidebarProps) {
+export default function Sidebar() {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -25,6 +23,7 @@ export default function Sidebar({}: SidebarProps) {
           src="/icons/logo.svg"
           alt="logo"
         />
+
         <ul className="space-y-7">
           <SidebarItem
             current={pathname === "/dashboard"}
@@ -34,6 +33,7 @@ export default function Sidebar({}: SidebarProps) {
           >
             Dashboard
           </SidebarItem>
+
           <SidebarItem
             current={pathname === "/companies"}
             pathname="/companies"
@@ -43,6 +43,7 @@ export default function Sidebar({}: SidebarProps) {
             Companies
           </SidebarItem>
         </ul>
+
         <button
           className="flex items-center gap-2 p-6 mt-auto mx-auto"
           onClick={handleExitClick}
@@ -53,6 +54,7 @@ export default function Sidebar({}: SidebarProps) {
             src="/icons/arrow-left-on-rectangle.svg"
             alt="exit icon"
           />
+
           <span className="font-medium text-white">Exit</span>
         </button>
       </div>
