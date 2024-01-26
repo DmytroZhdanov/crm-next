@@ -76,7 +76,7 @@ interface PromotionAttributes {
 const PROJECT_API = process.env.NEXT_PUBLIC_PROJECT_API;
 
 const buildUrl = (...paths: string[]) =>
-  `http://${PROJECT_API}/${paths.join("/")}`;
+  `https://${PROJECT_API}/${paths.join("/")}`;
 
 const sendRequest = async <T>(url: string, init?: RequestInit) => {
   const res = await fetch(url, init);
